@@ -1,0 +1,125 @@
+
+\documentclass[12pt,a4paper,oneside]{report}
+\usepackage{graphicx}
+\usepackage{titlepic}
+\usepackage{titlesec}
+\usepackage[utf8]{inputenc}
+\usepackage[left=1.0in,right=1.0in, top=1in, bottom= 1in]{geometry}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{algorithmicx}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{etoolbox}
+\usepackage[nottoc]{tocbibind}
+\usepackage{appendix}
+\usepackage{minted}
+\usepackage{multicol}
+\usepackage{leftidx}
+\graphicspath{{figures/}}
+\usepackage{ragged2e}
+\usepackage{mathtools}
+\usepackage{units}
+\usepackage{float}
+\usepackage{subcaption}
+\usepackage{commath}
+\usepackage{pdfpages}
+\usepackage{wrapfig}
+\usepackage[sorting=none]{biblatex} %biblatex package, bibliography
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{dirtytalk}
+\usepackage{amsthm}
+ 
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+
+\newtheorem{theorem}{Theorem}
+
+\usepackage[none]{hyphenat} % Avoids to go out of margin
+
+\usepackage{subfiles}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.95}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegray},
+    keywordstyle=\color{orange},
+    numberstyle=\tiny\color{blue},
+    stringstyle=\color{codegreen},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,          
+    keepspaces=true,                 
+    numbers=none,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2,   
+    aboveskip=3mm,
+    belowskip=3mm,
+    columns=flexible,
+}
+
+
+\lstset{style=mystyle}
+
+\setcounter{secnumdepth}{4}
+
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+
+% --------------------------------------------- %
+\addbibresource{bibliografia.bib} %Import the bibliography file
+
+\title{Progettazione e Sviluppo di un simulatore di parcheggio basato sulle API GeneroCity}	        % Title
+\author{Lorenzo Passaretti}				% Authors separated by \\
+\date{\today}									    % Date
+
+% Font size of figure smaller than normal size:
+\usepackage{caption}
+\captionsetup[figure]{font=small}
+%\captionsetup[table]{font=small}
+
+%\usepackage{setspace} % double spacing
+\linespread{1.2}
+
+\makeatletter
+\let\thetitle\@title
+\let\theauthor\@author
+\let\thedate\@date
+\makeatother
+
+\begin{document}
+\sloppy
+
+
+\include{title}
+
+\vspace{1.0cm}
+
+\tableofcontents
+\newpage
+\subfile{Chapters/01-Introduzione}
+\clearpage
+\subfile{Chapters/02-Primi task}
+\clearpage
+\subfile{Chapters/03-Simulazione}
+\clearpage
+\subfile{Chapters/04-Conclusione}
+\clearpage
+\printbibliography
+\end{document}
+

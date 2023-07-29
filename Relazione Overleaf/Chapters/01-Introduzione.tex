@@ -1,0 +1,61 @@
+\documentclass[main.tex]{subfiles}
+
+\begin{document}
+\sloppy
+
+
+\vspace{1.0cm}
+
+\chapter{Introduzione}\label{sec:Introduzione}
+\section{L’applicazione Generocity}
+
+GeneroCity \cite{Generocity} è un’applicazione di smart parking per Android e iOS sviluppata dal  
+\begin{wrapfigure}{r}{0.20\textwidth}
+    \centering
+    \captionsetup{justification=centering}
+    \includegraphics[scale=0.07]{img/introduzione/logoColori.png}
+    \caption{Logo di Generocity}
+    \label{fig:generocityLogo}
+\end{wrapfigure}
+Gamification Lab del Dipartimento di Informatica dell’Università degli Studi di Roma “La Sapienza”.\newline
+Lo scopo dell'applicazione è quello di facilitare lo scambio dei parcheggi all’interno di un’area urbana puntando sulla generosità degli utenti.\newline
+L’applicazione consente inoltre di gestire le informazioni delle proprie automobili e di condividerle con i propri familiari.
+
+\section{Funzionamento}\label{Funzionamento}
+
+Il funzionamento di questa applicazione si basa su due ruoli fondamentali: l'utente giver e l'utente taker.
+Quando un utente vuole lasciare un parcheggio (giver) può segnalarlo sul suo smartphone indicando un orario approssimativo di quando andrà via. Un utente che invece sta cercando un parcheggio (taker), può indicare un'area in cui ha intenzione di parcheggiare ed un orario. \newline
+Quando il server trova un utente giver ed uno taker nella stessa area, con un orario simile e con una macchina di simili dimensioni li abbinerà, creando così un match.
+Una volta giunto il momento segnato dal match, il giver lascerà il suo parcheggio mentre il taker lo occuperà, completando così il match. \newline
+Questo processo di scambio è incentivato da un sistema a punti, il quale premierà i giver che completeranno il loro match.
+
+
+\section{Architettura e Backend di Generocity}
+
+L’architettura di Generocity si basa sul modello client-server. In questa relazione verrà trattato solamente il lato backend, essendo stato quello il tema del mio tirocinio. \newline
+Il lato backend è composto da due interfacce che permettono l’interazione fra l’utente e il database: \textbf{Router} e \textbf{AppDatabase}.\newline
+Il Router processa le informazioni ricavate da una richiesta HTTP ricevuta, tramite l'\textbf{handler} il quale riceve la richiesta ed effettua la chiamata API corretta, la quale processa e passa le informazioni ad AppDatabase che si occuperà di eseguire tutte le query necessarie al database per soddisfarla. \newline
+Il backend di GeneroCity è scritto nel linguaggio di programmazione \say{Go} \cite{Go} e utilizza un database MariaDB per memorizzare tutti i dati necessari.
+
+\section{Perché usare Generocity?}
+
+Tramite l'utilizzo di Generocity, un automobilista riuscirà a trovare parcheggio con molta più facilità rispetto ad uno che non la utilizza. 
+Questo beneficio comporta un minor tempo di utilizzo dell'automobile, con una conseguente riduzione del traffico cittadino e quindi dell'inquinamento automobilistico.
+
+\section{Analisi dei competitor}
+
+Le altre applicazioni attualmente sul mercato si limitano ad offrire una prenotazione di parcheggi gestiti ed a pagamento. Queste applicazioni sono sicuramente utili ma non risolvono il problema del cercare un parcheggio libero senza dover pagare. Per questo l'app Generocity, una volta diventata abbastanza popolare, risulterà come un applicazione fondamentale per qualunque automobilista cittadino.
+
+
+\section{Il tirocinio} \label{Tirocinio}
+
+Il sito del Gamification Lab \cite{GamificationLab} descrive il percorso di tirocinio come:
+\begin{quote}
+Ogni progetto è un gruppo di lavoro: quando si entra nel progetto da tirocinante/tesista si lavora in gruppo con altri studenti. In un primo periodo si inizierà a prendere confidenza con gli strumenti di lavoro e con il progetto, poi successivamente si passerà a piccoli lavori (risolvere piccoli bug, altri cambiamenti) ed infine, una volta preso “confidenza” con il progetto e con gli strumenti di lavoro, si sceglie un argomento specifico che costituisce il proprio lavoro di tirocinio/tesi.\cite{percorso-tirocinio}
+\end{quote}
+Seguendo questa premessa, nei mesi passati al laboratorio mi sono stati assegnati vari task, partendo dai più piccoli bug per prendere dimestichezza col codice, fino ad arrivare al task principale, con riunioni settimanali per aggiornarci sull'avanzamento dei task ed assegnarne di nuovi. \newline
+Per poter condividere il codice e gestire l'assegnazione delle task, è stato utilizzata la piattaforma GitLab \cite{GitLab}, la quale offre una interfaccia web per la gestione della repository Git \cite{Git} del progetto.
+
+
+
+\end{document}

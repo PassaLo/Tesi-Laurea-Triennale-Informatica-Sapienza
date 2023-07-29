@@ -1,0 +1,40 @@
+# This is the configuration file for taker bot
+log:
+  level: debug
+#Bot's info(name of the bot, and number of the bots that we want to create)
+bot:
+  name: "bottas"
+  quantity: 2
+#Car's info
+car:
+  mac: "ab:ac:dd:aa:aa:a"
+  plate: "bbcasi"
+  nickname: "botCardos"
+  make: "fiat"
+  model: "punto"
+  color: "black"
+  size: 1
+#Header of the http request
+header:
+  contenttype: "application/json;"
+  xappbuild: "1"
+  xappversion: "1.0.0"
+  xapplang: "it"
+  xappplatform: "android"
+#Where a new bot starts and the range of the area. 
+#It also indicates the center of the area where the simulation will take place
+location:
+  lat: "41.897501"
+  lon: "12.515542"
+  deltalat: "0.03"
+  deltalon: "0.03"
+  #deltalat and deltalon represents the radius of the area in which the taker will 
+  #search for a giver. 0.03 means (more or less) 3 km.
+time:
+  sleep: 2000 #number of milliseconds of each request
+  mintime : 200 #min time the bot must wait to traver one segment of the road
+  maxtime : 200 #max time the bot must wait to traver one segment of the road
+  schedule: 15 #MUST be the same as the match schedule
+host:
+  url: "http://localhost:3000" #url of the host to send API requests to
+  csvfile: "./cmd/taker-bot/config/bots.csv" #where to save the bot
